@@ -12,6 +12,8 @@ target 'Marvel' do
   pod 'SwiftMessages'
   pod 'CryptoSwift'
   pod 'XcodeConfig', :git => 'https://github.com/AnasAlhasani/XcodeConfig'
+  pod 'UIImageColors'
+  pod 'FSPagerView'
 
   target 'MarvelTests' do
     inherit! :search_paths

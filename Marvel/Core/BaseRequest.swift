@@ -11,7 +11,7 @@ import Alamofire
 import CryptoSwift
 
 protocol ServiceProtocol {
-    func getRequest<T : Decodable>(request: String, type: T.Type) -> AnyPublisher<DataResponse<T, NetworkError>, Never>
+    func getRequest<T : Decodable>(request: String, type: T.Type) -> AnyPublisher<DataResponse<MSResult<T>, NetworkError>, Never>
 }
 
 class Service: ServiceProtocol {
@@ -26,7 +26,7 @@ class Service: ServiceProtocol {
         return Parameters(dictionaryLiteral: ("apikey", publicKey), ("ts", ts), ("hash", "\(ts)\(privateKey)\(publicKey)".md5()))
     }
     
-    func getRequest<T : Decodable>(request: String, type: T.Type) -> AnyPublisher<DataResponse<T, NetworkError>, Never> {
+    func getRequest<T : Decodable>(request: String, type: T.Type) -> AnyPublisher<DataResponse<MSResult<T>, NetworkError>, Never> {
         let url = URL(string: "\(RequestConfig.apiURL)/\(request)")!
         
         return AF.request(url,
@@ -34,7 +34,7 @@ class Service: ServiceProtocol {
                           parameters: parameters,
                           headers: HTTPHeaders([HTTPHeader(name: "Accept", value: "*/*")]))
             .validate()
-            .publishDecodable(type: T.self)
+            .publishDecodable(type: MSResult<T>.self)
             .map { response in
                 response.mapError { error in
                     let backendError = response.data.flatMap {
@@ -47,5 +47,3 @@ class Service: ServiceProtocol {
             .eraseToAnyPublisher()
     }
 }
-
-

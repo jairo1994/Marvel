@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeroTableViewCell" rowHeight="163" id="KGk-i7-Jjw" customClass="HeroTableViewCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="391" height="163"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="391" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v2a-1C-w2m">
+                        <rect key="frame" x="8" y="8" width="146.66666666666666" height="147"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="v2a-1C-w2m" secondAttribute="height" id="dHj-Wz-bsA"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Bgh-6Q-LYo">
+                        <rect key="frame" x="162.66666666666663" y="8" width="220.33333333333337" height="72.666666666666671"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hulk" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUS-c2-HIH">
+                                <rect key="frame" x="0.0" y="0.0" width="220.33333333333334" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ists of comic characters with optional filters. See notes on individual parameters below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efO-zk-WWx">
+                                <rect key="frame" x="0.0" y="22.333333333333332" width="220.33333333333334" height="50.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Bgh-6Q-LYo" secondAttribute="trailing" constant="8" id="5dw-Kb-Y0U"/>
+                    <constraint firstItem="Bgh-6Q-LYo" firstAttribute="leading" secondItem="v2a-1C-w2m" secondAttribute="trailing" constant="8.0000000000000284" id="R8E-zD-S0W"/>
+                    <constraint firstItem="v2a-1C-w2m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="T3N-X7-Ewz"/>
+                    <constraint firstItem="v2a-1C-w2m" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xmg-m6-w0G"/>
+                    <constraint firstItem="Bgh-6Q-LYo" firstAttribute="top" secondItem="v2a-1C-w2m" secondAttribute="top" id="aWk-eZ-ULA"/>
+                    <constraint firstItem="v2a-1C-w2m" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="zp7-qT-9va"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descLbl" destination="efO-zk-WWx" id="AUx-82-h2l"/>
+                <outlet property="imageHero" destination="v2a-1C-w2m" id="vA9-NJ-6t8"/>
+                <outlet property="nameLbl" destination="oUS-c2-HIH" id="HmT-O8-THP"/>
+            </connections>
+            <point key="canvasLocation" x="164.12213740458014" y="61.619718309859159"/>
+        </tableViewCell>
+    </objects>
+</document>
