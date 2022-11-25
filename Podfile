@@ -10,6 +10,8 @@ target 'Marvel' do
   pod 'Alamofire'
   pod 'Hero'
   pod 'SwiftMessages'
+  pod 'CryptoSwift'
+  pod 'XcodeConfig', :git => 'https://github.com/AnasAlhasani/XcodeConfig'
 
   target 'MarvelTests' do
     inherit! :search_paths
