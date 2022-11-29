@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="163"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cex-fo-ZRY">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="163"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v2a-1C-w2m">
                         <rect key="frame" x="8" y="8" width="146.66666666666666" height="147"/>
                         <constraints>
@@ -47,10 +52,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Bgh-6Q-LYo" secondAttribute="trailing" constant="8" id="5dw-Kb-Y0U"/>
+                    <constraint firstItem="cex-fo-ZRY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Wj-RH-cDj"/>
+                    <constraint firstItem="cex-fo-ZRY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NHc-bL-5S8"/>
                     <constraint firstItem="Bgh-6Q-LYo" firstAttribute="leading" secondItem="v2a-1C-w2m" secondAttribute="trailing" constant="8.0000000000000284" id="R8E-zD-S0W"/>
                     <constraint firstItem="v2a-1C-w2m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="T3N-X7-Ewz"/>
                     <constraint firstItem="v2a-1C-w2m" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xmg-m6-w0G"/>
+                    <constraint firstAttribute="bottom" secondItem="cex-fo-ZRY" secondAttribute="bottom" id="ZWG-lj-ftM"/>
                     <constraint firstItem="Bgh-6Q-LYo" firstAttribute="top" secondItem="v2a-1C-w2m" secondAttribute="top" id="aWk-eZ-ULA"/>
+                    <constraint firstAttribute="trailing" secondItem="cex-fo-ZRY" secondAttribute="trailing" id="ipq-YM-M0q"/>
                     <constraint firstItem="v2a-1C-w2m" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="zp7-qT-9va"/>
                 </constraints>
             </tableViewCellContentView>
@@ -59,8 +68,14 @@
                 <outlet property="descLbl" destination="efO-zk-WWx" id="AUx-82-h2l"/>
                 <outlet property="imageHero" destination="v2a-1C-w2m" id="vA9-NJ-6t8"/>
                 <outlet property="nameLbl" destination="oUS-c2-HIH" id="HmT-O8-THP"/>
+                <outlet property="shadow" destination="cex-fo-ZRY" id="iHz-cf-Nou"/>
             </connections>
             <point key="canvasLocation" x="164.12213740458014" y="61.619718309859159"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

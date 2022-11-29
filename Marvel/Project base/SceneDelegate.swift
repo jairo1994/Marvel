@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let user = Session.user {
             userModel = user
+            
         } else {
             Session.user = userModel
         }

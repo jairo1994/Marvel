@@ -8,9 +8,9 @@
 import Foundation
 
 enum Settings {
-    case shouldSeeWelcomeView
     case language
     case faqs
-    case writeUs
+    case privacy
+    case legal
     case rateUs
 }

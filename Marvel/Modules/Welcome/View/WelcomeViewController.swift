@@ -46,8 +46,8 @@ class WelcomeViewController: UIViewController, FSPagerViewDelegate, FSPagerViewD
     }
 
     @IBAction func skip(_ sender: Any) {
-        UserManager.shared.setIfUserShouldSeeWelcomeView(false)
-        self.navigationController?.pushViewController(HomeViewController(), animated: true)
+        Session.user = UserModel(shouldSeeWelcomeView: false)
+        self.navigationController?.pushViewController(TabBarHomeViewController(), animated: true)
     }
 }
 

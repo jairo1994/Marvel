@@ -9,4 +9,6 @@ import Foundation
 
 protocol HeroDetailViewModelProtocol {
     var hero: HeroDetailModel! { get set }
+    func comicsNum() -> Int
+    func getComicDataBy(index: Int) -> MSDetailItem?
 }

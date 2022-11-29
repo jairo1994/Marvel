@@ -9,7 +9,7 @@
 import Foundation
 
 class Session: NSObject{
-    static let userProfile = "userProfile"
+    static let userProfile = "userMarvel"
     
     static var user: UserModel?{
         get{

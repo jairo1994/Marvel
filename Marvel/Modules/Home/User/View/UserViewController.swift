@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class UserViewController: UIViewController {
     
@@ -51,7 +52,20 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let optionSelected = viewModel.getSettingInfoBy(index: indexPath.item)
         
+        switch optionSelected.settingType {
+        case .language:
+            Messages.showMessage(theme: .success, title: "Opción de idioma", body: "Esta es una opción de ejemplo para cambiar el idioma dentro de la app")
+        case .faqs:
+            openUrl(url: "https://www.fintonic.mx/es-MX/soporte-ayuda/")
+        case .privacy:
+            openUrl(url: "https://www.fintonic.mx/es-MX/proteccion-de-datos/")
+        case .legal:
+            openUrl(url: "https://www.fintonic.mx/es-MX/terminos-legales/")
+        case .rateUs:
+            Messages.showMessage(theme: .warning, title: "Opción para calificar", body: "Esta es una opción de ejemplo para calificar la aplicación ⭐️⭐️⭐️⭐️⭐️")
+        }
     }
     
 

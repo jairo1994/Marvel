@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         table.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         table.delegate = self
         table.dataSource = self
+        table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
         return table
     }()
     
@@ -24,26 +26,32 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         hero.isEnabled = true
-        
         setupView()
-        
-        viewModel.loadData { [weak self] ready in
-            guard let self = self else { return }
-            if ready {
-                self.tableView.reloadData()
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        
+        if viewModel.heroesList.isEmpty {
+            showLoading(text: "Cargando personajes...")
+            viewModel.loadData { [weak self] ready in
+                guard let self = self else { return }
+                self.hideLoading()
+                if ready {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
     }
 
     func setupView(){
+        tableView.layer.masksToBounds = false
+        tableView.removeFromSuperview()
         view.addSubview(tableView)
         
-        tableView.constraintToParent(parent: view)
+        tableView.constraintToParent(parent: view, leading: 8, trailing: -8)
     }
 
 }

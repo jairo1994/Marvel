@@ -16,8 +16,8 @@ class UserViewModel: UserViewModelProtocol {
                                             [OptionSettingModel(name: "Language", settingType: .language, description: "Lorem ipsum", image: UIImage(named: "languages")),
                                              OptionSettingModel(name: "FAQs", settingType: .faqs, description: "Lorem ipsum", image: UIImage(named: "faq")),
                                              OptionSettingModel(name: "Rate us", settingType: .rateUs, description: "Lorem ipsum", image: UIImage(named: "rate")),
-                                             OptionSettingModel(name: "Ver intro", settingType: .shouldSeeWelcomeView, description: "Lorem ipsum", image: UIImage(named: "intro")),
-                                             OptionSettingModel(name: "Escribenos", settingType: .writeUs, description: "Lorem ipsum", image: UIImage(named: "contact"))
+                                             OptionSettingModel(name: "Política de Privacidad", settingType: .privacy, description: "Lorem ipsum", image: UIImage(named: "contact")),
+                                             OptionSettingModel(name: "Términos y condiciones", settingType: .legal, description: "Lorem ipsum", image: UIImage(named: "contact"))
                                             ])
     }
     

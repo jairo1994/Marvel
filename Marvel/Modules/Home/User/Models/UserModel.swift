@@ -8,5 +8,5 @@
 import Foundation
 
 struct UserModel: Codable {
-    var shouldSeeWelcomeView: Bool
+    let shouldSeeWelcomeView: Bool
 }
